@@ -21,7 +21,7 @@ export default function PayrollPage() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="flex flex-col gap-6 p-6 pt-20 md:p-10">
+    <div className="flex flex-col gap-6 p-6 pt-24 md:p-10">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex flex-col gap-1">
           <h1 className="text-3xl font-semibold tracking-tight">Payroll</h1>

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Landmark, ArrowRightLeft, Clock, Scale, Users, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { useFreighter } from "@/contexts/FreighterContext"
 
 const metrics = [
   { label: "Treasury Balance", value: "450,000 XLM", icon: Landmark },
@@ -22,11 +23,14 @@ const recentActivity = [
 ]
 
 export default function DashboardPage() {
+  const { address, isConnected } = useFreighter()
   return (
-    <div className="flex flex-col gap-8 p-6 pt-20 md:p-10">
+    <div className="flex flex-col gap-8 p-6 pt-24 md:p-10">
       <div className="flex flex-col gap-1">
         <h1 className="text-3xl font-semibold tracking-tight">OrbitPay</h1>
-        <p className="text-muted-foreground">Decentralized Payroll on Stellar</p>
+        <p className="text-muted-foreground">
+          {isConnected ? `Connected as ${address?.slice(0, 8)}...${address?.slice(-4)}` : "Decentralized Payroll on Stellar"}
+        </p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
