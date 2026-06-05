@@ -63,7 +63,7 @@ export default function VestingPage() {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {statCards.map(({ label, value, icon: Icon }) => (
-          <Card key={label} className="sg-glass border">
+          <Card key={label} className="border">
             <CardHeader className="flex flex-row items-center justify-between pb-2"><CardTitle className="text-sm font-medium">{label}</CardTitle><Icon className="text-muted-foreground" /></CardHeader>
             <CardContent><p className="text-2xl font-semibold tracking-tight">{value}</p></CardContent>
           </Card>
@@ -77,7 +77,7 @@ export default function VestingPage() {
           {schedules.filter(s => s.status === "Active").map((s) => {
             const pct = Math.round((parseInt(s.claimedAmount.replace(/,/g,"")) / parseInt(s.totalAmount.replace(/,/g,""))) * 100)
             return (
-              <Card key={s.id} className="sg-glass border">
+              <Card key={s.id} className="border">
                 <CardContent className="flex flex-col gap-4 p-6">
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div className="flex flex-col gap-1">
@@ -105,7 +105,7 @@ export default function VestingPage() {
         </TabsContent>
 
         <TabsContent value="all">
-          <Card className="sg-glass border"><CardContent className="p-0"><Table><TableHeader><TableRow><TableHead>Schedule</TableHead><TableHead>Beneficiary</TableHead><TableHead>Amount</TableHead><TableHead>Label</TableHead><TableHead>Status</TableHead></TableRow></TableHeader>
+          <Card className="border"><CardContent className="p-0"><Table><TableHeader><TableRow><TableHead>Schedule</TableHead><TableHead>Beneficiary</TableHead><TableHead>Amount</TableHead><TableHead>Label</TableHead><TableHead>Status</TableHead></TableRow></TableHeader>
             <TableBody>{schedules.map((s) => (<TableRow key={s.id}>
               <TableCell className="font-mono text-sm">{s.id}</TableCell><TableCell>{s.beneficiary}</TableCell><TableCell>{s.totalAmount}</TableCell>
               <TableCell><Badge variant="outline">{s.label}</Badge></TableCell>

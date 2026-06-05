@@ -54,7 +54,7 @@ export default function PayrollPage() {
           { label: "Employees", value: "3", icon: Clock },
           { label: "Completed", value: "1", icon: CheckCircle },
         ].map(({ label, value, icon: Icon }) => (
-          <Card key={label} className="sg-glass border">
+          <Card key={label} className="border">
             <CardHeader className="flex flex-row items-center justify-between pb-2"><CardTitle className="text-sm font-medium">{label}</CardTitle><Icon className="text-muted-foreground" /></CardHeader>
             <CardContent><p className="text-2xl font-semibold tracking-tight">{value}</p></CardContent>
           </Card>
@@ -68,7 +68,7 @@ export default function PayrollPage() {
           {streams.filter(s => s.status === "Active").map((s) => {
             const elapsed = 40
             return (
-              <Card key={s.id} className="sg-glass border">
+              <Card key={s.id} className="border">
                 <CardContent className="flex flex-col gap-4 p-6">
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div className="flex flex-col gap-1">
@@ -95,7 +95,7 @@ export default function PayrollPage() {
         </TabsContent>
 
         <TabsContent value="all">
-          <Card className="sg-glass border">
+          <Card className="border">
             <CardContent className="p-0"><Table><TableHeader><TableRow><TableHead>Stream</TableHead><TableHead>Recipient</TableHead><TableHead>Amount</TableHead><TableHead>Period</TableHead><TableHead>Status</TableHead></TableRow></TableHeader>
               <TableBody>{streams.map((s) => (<TableRow key={s.id}>
                 <TableCell className="font-mono text-sm">{s.id}</TableCell>

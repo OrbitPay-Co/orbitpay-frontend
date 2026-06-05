@@ -31,7 +31,7 @@ export default function DashboardPage() {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {metrics.map(({ label, value, icon: Icon }) => (
-          <Card key={label} className="sg-glass border">
+          <Card key={label} className="border">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium">{label}</CardTitle>
               <Icon className="text-muted-foreground" />
@@ -42,7 +42,7 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <Card className="sg-glass border">
+        <Card className="border">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Recent Activity</CardTitle>
             <Button variant="ghost" size="sm" render={<Link href="/treasury" />} nativeButton={false}>
@@ -65,7 +65,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="sg-glass border">
+        <Card className="border">
           <CardHeader><CardTitle>Quick Actions</CardTitle></CardHeader>
           <CardContent className="flex flex-col gap-3">
             {[

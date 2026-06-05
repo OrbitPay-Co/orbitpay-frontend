@@ -50,7 +50,7 @@ export default function TreasuryPage() {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map(({ label, value, icon: Icon }) => (
-          <Card key={label} className="sg-glass border">
+          <Card key={label} className="border">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium">{label}</CardTitle>
               <Icon className="text-muted-foreground" />
@@ -98,7 +98,7 @@ export default function TreasuryPage() {
             const met = count >= config.threshold
             const hasApproved = tx.approvals.includes(currentSigner)
             return (
-              <Card key={tx.id} className="sg-glass border">
+              <Card key={tx.id} className="border">
                 <CardContent className="flex flex-col gap-4 p-6">
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div className="flex flex-col gap-1">
@@ -128,7 +128,7 @@ export default function TreasuryPage() {
         </TabsContent>
 
         <TabsContent value="history">
-          <Card className="sg-glass border">
+          <Card className="border">
             <CardContent className="p-0">
               <Table>
                 <TableHeader><TableRow><TableHead>Transaction</TableHead><TableHead>Recipient</TableHead><TableHead>Amount</TableHead><TableHead>Date</TableHead><TableHead>Status</TableHead></TableRow></TableHeader>

@@ -61,7 +61,7 @@ export default function GovernancePage() {
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {statCards.map(({ label, value, icon: Icon }) => (
-          <Card key={label} className="sg-glass border">
+          <Card key={label} className="border">
             <CardHeader className="flex flex-row items-center justify-between pb-2"><CardTitle className="text-sm font-medium">{label}</CardTitle><Icon className="text-muted-foreground" /></CardHeader>
             <CardContent><p className="text-2xl font-semibold tracking-tight">{value}</p></CardContent>
           </Card>
@@ -72,7 +72,7 @@ export default function GovernancePage() {
         <h2 className="mb-4 text-xl font-semibold">Active Proposals</h2>
         <div className="flex flex-col gap-4">
           {active.map((p) => (
-            <Card key={p.id} className="sg-glass border">
+            <Card key={p.id} className="border">
               <CardContent className="flex flex-col gap-4 p-6">
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="flex flex-col gap-1">
@@ -110,7 +110,7 @@ export default function GovernancePage() {
 
       <div>
         <h2 className="mb-4 text-xl font-semibold">Past Proposals</h2>
-        <Card className="sg-glass border"><CardContent className="p-0"><Table><TableHeader><TableRow><TableHead>ID</TableHead><TableHead>Title</TableHead><TableHead>Status</TableHead><TableHead>Votes</TableHead></TableRow></TableHeader>
+        <Card className="border"><CardContent className="p-0"><Table><TableHeader><TableRow><TableHead>ID</TableHead><TableHead>Title</TableHead><TableHead>Status</TableHead><TableHead>Votes</TableHead></TableRow></TableHeader>
           <TableBody>{past.map((p) => (<TableRow key={p.id}>
             <TableCell className="font-mono text-sm">#{p.id}</TableCell>
             <TableCell className="font-medium">{p.title}</TableCell>
